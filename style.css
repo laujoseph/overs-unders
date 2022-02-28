@@ -1,0 +1,157 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*It guarantees that the content box shrinks to make space for the padding and borders.*/
+}
+
+body{
+    height: 100%;
+    background: linear-gradient (
+        #e92e3d,
+        #ff6e6a
+    ) 0 100% no-repeat;
+    background-size: 100% 50%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 800px;
+    height: 850px;
+    padding: 20px;
+    border: 1px solid black;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(50,50,50,0.15);
+    border-radius: 8px;
+    outline: none;
+    font-size: 2rem;
+}
+.header {
+    color: black;
+    margin: auto;
+    text-align: center;
+}
+
+.welcome {
+    color:black;
+    margin-left: 100px;
+    text-align:center;
+
+}
+
+#userInput {
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 230px;
+    width: 300px;
+    height: 50px;
+}
+
+.cashremainingtext {
+    font-size: 35px;
+    text-align:center;
+}
+.youhaveplacedtext{
+    text-align: center;
+    font-size: 35px;
+}
+
+.overbtn{ 
+    width: 175px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 85px;
+    background-color: rgb(255, 0, 68);
+    border-radius: 4px;
+    transition: ease-out 0.3s;
+    color: white;
+    font-size: 2rem;
+    box-shadow: inset 0 0 0 0 #f9e506;
+}
+.underbtn {
+    width: 175px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: rgb(42, 155, 221);
+    border-radius: 4px;
+    color: white;
+    font-size: 2rem;
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #f9e506;
+}
+
+.sevenbtn {
+    width: 175px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: rgb(2, 2, 2);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #f9e506;
+
+}
+
+/* When mouse hovers over button */
+.overbtn:hover, .underbtn:hover, .sevenbtn:hover {
+    box-shadow: inset 175px 0 0 0 #f9e506;
+    cursor: pointer;
+    color: black;
+}
+
+/* When button is clicked */
+.overbtn:focus, .underbtn:focus, .sevenbtn:focus {
+    color: black;
+    border-color:rgb(255, 0, 68);
+    background-color: #f9e506;
+    border-width: thick;
+}
+
+
+.dice-wrapper {
+    padding: 20px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+#rollbtn {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: -10px;
+
+}
+
+#die-1 {
+    margin-left: 175px;
+    margin-right: 50px;
+}
+
+#betamount {
+    text-align: center;
+}
+
+#walletamount {
+    text-align: center;
+}
+
+#resetbtn {
+    width: 100px;
+    height: 20px;
+    margin-left: 650px;
+}
+
+#winstreak {
+    text-align: center;
+    font-size: 25px;
+}

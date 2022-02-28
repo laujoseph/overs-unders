@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Overs and unders</title>
+</head>
+<body>
+    
+<div class = 'container'>
+    <button onclick="rules()" id='rulebtn'>Rules</button>
+    <h1 class = 'header'>Overs and unders</h1>
+    <br>
+
+    <h2 class = 'cashremainingtext'>Cash remaining: </h2>
+    <div type="number" id='walletamount'>$100</div>
+    
+    <h2 class = 'youhaveplacedtext'>You have placed: </h2>
+    <div type="number" id='betamount'>$0</div>
+    <br>
+
+    <!-- Winstreak counter -->
+    <p id="winstreak">Current winstreak: <span id="winstreakcounter" >0</span></p>
+
+    <!-- Input box  -->
+    <input type="number" min="1" max="" id='userInput' placeholder="Please enter play amount" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+    <button onclick="logInput()">Confirm</button>
+    <button onclick="userCallOver()" class='overbtn'>Over</button>
+    <button onclick="userCallSeven()"class='sevenbtn'>Seven</button>
+    <button onclick="userCallUnder()"class='underbtn'>Under</button>
+    
+    <!-- Dice -->
+    <div class='dice-wrapper'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png' id='die1'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png' id='die2'>
+        
+    </div>
+        <button onclick="rollDie()" id='rollbtn'>Roll!</button>
+        <div class = 'resultbox'>
+            <div id = 'resultdisplay'>0</div>
+    
+</div>
+<button onclick="resetGame()" id='resetbtn'>Reset Game</button>
+</body>
+    <script src="script.js"></script>
+</html>

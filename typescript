@@ -1,0 +1,32 @@
+Script started on Fri Feb 25 17:19:53 2022
+[1m[7m%[27m[1m[0m                                                                                                                              [0m[27m[24m[Jjosephlau@Stephens-MBP Overs and Unders % [K[?2004hnnode script[?2004l
+/Users/josephlau/Desktop/Overs and Unders/script.js:2
+const displayDiceTotal = document.getElementById("resultdisplay")
+                         ^
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (/Users/josephlau/Desktop/Overs and Unders/script.js:2:26)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1097:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1149:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:975:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+
+Node.js v17.3.0
+[1m[7m%[27m[1m[0m                                                                                                                              [0m[27m[24m[Jjosephlau@Stephens-MBP Overs and Unders % [K[?2004hnnode script[?2004l
+/Users/josephlau/Desktop/Overs and Unders/script.js:2
+const displayDiceTotal = document.getElementById("resultdisplay")
+                         ^
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (/Users/josephlau/Desktop/Overs and Unders/script.js:2:26)
+[90m    at Module._compile (node:internal/modules/cjs/loader:1097:14)[39m
+[90m    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1149:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:975:32)[39m
+[90m    at Function.Module._load (node:internal/modules/cjs/loader:822:12)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)[39m
+[90m    at node:internal/main/run_main_module:17:47[39m
+
+Node.js v17.3.0
+[1m[7m%[27m[1m[0m                                                                                                                              [0m[27m[24m[Jjosephlau@Stephens-MBP Overs and Unders % [K[?2004h

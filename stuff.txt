@@ -1,0 +1,43 @@
+die 1 = https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png
+die 2 = https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png
+die 3 = https://upload.wikimedia.org/wikipedia/commons/2/2f/Alea_3.png
+die 4 = https://upload.wikimedia.org/wikipedia/commons/8/8d/Alea_4.png
+die 5 = https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png
+die 6 = https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png
+
+For dice roll,
+use math.floor(math.random()*6) ?
+number obtained links to die image link above
+create function to link dievalue and die image?
+
+what functions do i need:
+1. function to roll dice - get values of die
+2. function to log the amount entered by player
+3. 
+
+
+Flow of the game:
+User is given $100
+User places a play amount they wanna bet with
+User selects over/under/seven
+User hits 'Go!' to roll dice
+
+Events:
+1. Input play amount
+2. Hit enter to log it and display amount placed 
+3. Select over/under/seven
+4. Roll dice!
+
+// Stretch goals
+make animation for rolling dice
+when holding down dice roll button, dice keeps rolling
+
+winstreak counter?
+
+
+Things to check:
+- inputbox does not accept negative numbers and decimals - FIXED
+- inputbox able to input weird numbers like "00001" - FIXED
+- win status alert appears even tho no input amount is placed - FIXED
+- alert pops up when cash remaining = 0 - FIXED 
+- alert pops up too fast, before the dice images change - FIXED
