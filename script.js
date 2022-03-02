@@ -16,6 +16,8 @@ const mouseDownRollBtn = document.querySelector("#rollbtn")
 mouseDownRollBtn.addEventListener("onmousedown", infiniteRoll);
 
 function infiniteRoll() {
+  shakeDice.play();
+  shakeDice.loop
   dice.forEach(function(die){
     die.classList.add("rollinfinite");
   })
@@ -323,6 +325,9 @@ slotMachine.src = 'slotmachine_insert.mp3';
 
 const errorTone = new Audio();
 errorTone.src = 'error_tone.mp3'
+
+const shakeDice = new Audio()
+shakeDice.src = 'diceshake.mp3'
 
 // Audio volume levels for background music
 var backgroundMusic = document.getElementById("jazzmusic")
