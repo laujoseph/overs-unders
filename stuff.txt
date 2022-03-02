@@ -13,7 +13,7 @@ create function to link dievalue and die image?
 what functions do i need:
 1. function to roll dice - get values of die
 2. function to log the amount entered by player
-3. 
+3
 
 
 Flow of the game:
@@ -28,11 +28,12 @@ Events:
 3. Select over/under/seven
 4. Roll dice!
 
-// Stretch goals
-make animation for rolling dice
-when holding down dice roll button, dice keeps rolling
+
 
 winstreak counter?
+Records highest win streak?
+If win > 3 in a row input a comment msg?
+
 
 
 Things to check:
@@ -41,3 +42,12 @@ Things to check:
 - win status alert appears even tho no input amount is placed - FIXED
 - alert pops up when cash remaining = 0 - FIXED 
 - alert pops up too fast, before the dice images change - FIXED
+- hitting enter does not submit the inputbox value - FIXED
+
+
+
+// Stretch goals
+make animation for rolling dice
+when holding down dice roll button, dice keeps rolling
+
+Features:

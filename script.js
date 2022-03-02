@@ -1,33 +1,53 @@
-
-rules=()=>{
-  document.getElementById("rulebtn");
-  let rules =
-    "User inputs amount to play with.\n\nThe host will roll two 6 sided die and the result would be the summed values of both die.\n\nThe three possible results would be:\nOver: summed value is  (8 - 12)\nUnder: summed value is (1 - 6)\nSeven: summed value is 7\n\nIf player successfully calls Over/Under, double the amount placed. If player successfully calls Seven, TRIPLE the amount placed. If call is unsuccessful, amount placed is forfeited.\n\n";
-  alert(rules);
-};
-
 var diceTotal = 0;
 var winStreak = 0;
 
 // DOM variables
 const diceTotalDisplay = document.querySelector("#resultdisplay");
-const winStreakCounter = document.querySelector("#winstreakcounter")
+const winStreakCounter = document.querySelector("#winstreakcounter");
 const currentBetValue = document.getElementById("betamount");
 const currentWalletAmt = document.getElementById("walletamount");
 const userInput = document.getElementById("userInput");
+const highScore = document.getElementById("highscore");
+const total = document.getElementById("total");
+const spans = document.querySelectorAll('.header span');
+let dice = document.querySelectorAll("img");
+
+const mouseDownRollBtn = document.querySelector("#rollbtn")
+mouseDownRollBtn.addEventListener("onmousedown", infiniteRoll);
+
+function infiniteRoll() {
+  dice.forEach(function(die){
+    die.classList.add("rollinfinite");
+  })
+}
 
 
+
+// Functions
 // Rolling of the dice
 rollDie=()=>{
+  dice.forEach(function(die){
+    die.classList.remove("rollinfinite");
+  });
+  dice.forEach(function(die){
+    die.classList.add("roll");
+});
+setTimeout(function(){
+    dice.forEach(function(die){
+        die.classList.remove("roll");
+    });
+}, 500)
+
   var d1 = Math.floor(Math.random() * 6) + 1;
   var d2 = Math.floor(Math.random() * 6) + 1;
   console.log(`Die 1 rolled a ${d1}.`);
   console.log(`Die 2 rolled a ${d2}.`);
   diceTotal = d1 + d2;
 
-  diceTotalDisplay.innerText = diceTotal;
-  diceTotalDisplay.value = diceTotal;
+  // diceTotalDisplay.innerText = diceTotal;
+  // diceTotalDisplay.value = diceTotal;
 
+  total.innerHTML = `You rolled ${diceTotal}`;
   console.log(`Summed value is ${diceTotal}.`);
   if (diceTotal == 7) {
     console.log("Seven!");
@@ -84,24 +104,29 @@ rollDie=()=>{
         currentWalletAmt.value += userInput.value * 2;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        commentText();
+        kaching.play();
         console.log(currentWalletAmt.value)
         // SetTimeout allows the user to view the dice roll result before the alert prompts
         setTimeout(()=>{
+          if (userInput.value != 0) 
           alert(`Over! You've won $${userInput.value * 2}!`)
           currentBetValue.innerText= "$" + 0;
           userInput.value = '';
-          current
-        }, 500)
+        }, 800)
         
       } else {
         currentWalletAmt.value -= userInput.value;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak = 0;
+        crowdAww.play();
         setTimeout(()=>{
+          if (userInput.value != 0) 
           alert(`Doh! You've lost $${userInput.value}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
-        }, 500)
+          document.querySelector(".winstreakcomment").innerHTML = "";
+        }, 800)
       }
   
     } else if (userInputChosenString == 'Under') {
@@ -109,21 +134,28 @@ rollDie=()=>{
         currentWalletAmt.value += userInput.value * 2;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        commentText();
+        kaching.play();
         console.log(currentWalletAmt.value)
         setTimeout(()=>{
+          if (userInput.value != 0) 
           alert(`Under! You've won $${userInput.value * 2}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
-        }, 500)
+        }, 800)
       } else {
+        if (userInput.value != 0) 
         currentWalletAmt.value -= userInput.value;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak = 0;
+        crowdAww.play();
         setTimeout(()=>{
+          if (userInput.value != 0) 
           alert(`Doh! You've lost $${userInput.value}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
-        }, 500)
+          document.querySelector(".winstreakcomment").innerHTML = "";
+        }, 800)
       }
   
     } else if (userInputChosenString == 'Seven') {
@@ -131,48 +163,87 @@ rollDie=()=>{
         currentWalletAmt.value += userInput.value * 3;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        commentText();
+        kidsCheering.play();
         console.log(currentWalletAmt.value)
         setTimeout(()=>{
+          if (userInput.value != 0) 
           alert(`Seven! Amazing! You've won $${userInput.value * 3}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
-        }, 500)
+        }, 800)
       } else {
         currentWalletAmt.value -= userInput.value;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak = 0;
+        crowdAww.play();
         setTimeout(()=>{
           alert(`Doh! You've lost $${userInput.value}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
-        }, 500)
+          document.querySelector(".winstreakcomment").innerHTML = "";
+        }, 800)
       }
     } if (currentWalletAmt.value === 0) {
-      alert("You've run out of cash, better luck next time!")
-      location.reload();
+      crowdAww.play();
+      setTimeout(()=> {
+        alert("You've run out of cash, better luck next time!")
+        location.reload();
+      }, 1000);
+    }
   }
-  // return userInput.value = '';
-}
 
+// msgs that comments based on the winstreak in a row msg
+commentText=()=>{
+let comment = document.querySelector(".winstreakcomment")
+
+if (winStreakCounter.innerText == 2) {
+  document.getElementById("winstreak").appendChild(comment);
+  comment.innerHTML = "2 in a row! That's pretty lucky";
+  }
+if (winStreakCounter.innerText == 3) {
+  document.querySelector(".winstreakcomment").innerHTML ="3 in a row! You've got to be cheating...right?";
+  }
+if (winStreakCounter.innerText == 4) {
+  document.querySelector(".winstreakcomment").innerHTML ="4 in a row! You're cheating... this isn't fun anymore";
+  }
+};
 
 
 currentWalletAmt.value = 100;
 
+
 logInput=()=>{
   // Input Validity check
-  currentBetValue.innerHTML = "$" + parseInt(userInput.value, 10); // parseInt is used to remove the additional 0's in front of the number inputted
+  currentBetValue.innerHTML = "$" + parseInt(userInput.value, 10);
+   // parseInt is used to remove the additional 0's in front of the number inputted
   if (userInput.value > currentWalletAmt.value) {
+    errorTone.play();
     alert(`You can\'t place more than $${currentWalletAmt.value}.`);
     currentBetValue.innerHTML = "$" + 0;
-    
+    // trying to animate the numbers
   } else if (userInput.value == "" || userInput.value == 0) {
+    errorTone.play();
     alert("Please input a valid amount.");
     currentBetValue.innerHTML = "$" + 0 ;
     
+  } else {
+    // Slotmachine sound won't play unless User has input a valid play amount.
+    slotMachine.play();
   }
 }
 
+
+// Allow enter to submit input values
+userInput.addEventListener('keyup', (e)=> {
+  if(e.key === 'Enter') {
+    logInput();
+  }
+})
+
+
 var userInputChosenString = '';
+
 
 userCallOver=()=>{
   // !=0 is to ensure game doesnt run if input amount is 0
@@ -183,12 +254,14 @@ userCallOver=()=>{
   }
 }
 
+
 userCallUnder=()=>{
   if (userInput.value != 0) {
     userInputChosenString = 'Under';
     console.log(userInputChosenString)
   }
 }
+
 
 userCallSeven=()=>{
   if (userInput.value != 0) {
@@ -197,8 +270,94 @@ userCallSeven=()=>{
   }
 }
 
+
 resetGame=()=>{
   if (confirm("Are you sure you want to restart?") == true) {
   location.reload();
   }
 }
+
+
+rules=()=>{
+  document.getElementById("rulebtn");
+  let rules =
+    "Welcome to Overs and unders!\n\nBegin by entering your stakes then proceed to select Over, Under or Seven.\n\nOver: summed value is  8 - 12\nUnder: summed value is 1 - 6\nSeven: summed value is 7\n\nIf you call Over/Under and you win, your bet amount is doubled! If you call Seven and win, your bet amount is TRIPLED. For the 3 options, if you lose the bet amount placed is forfeited.\n\nWhat are you waiting for! Get rolling!";
+    clickSound2.play();
+    alert(rules);
+};
+
+
+const muteBtn = document.querySelector("#mutebtn")
+soundToggle=()=>{
+  backgroundMusic.play();
+  if (muteBtn.innerHTML == "🔊") {
+    backgroundMusic.volume = 0;
+    muteBtn.innerHTML = "🔇"
+  } else if (muteBtn.innerHTML == "🔇"){
+    backgroundMusic.volume = 0.8;
+    muteBtn.innerHTML = "🔊"
+  }
+}
+
+// Audio
+const diceRollSound = new Audio();
+diceRollSound.src = 'diceroll.mp3';
+
+const clickSound = new Audio();
+clickSound.src = 'mouseclick.mp3';
+
+const clickSound2 = new Audio();
+clickSound2.src = 'mouseclick2.mp3';
+
+const crowdAww = new Audio();
+crowdAww.src = 'crowd_aww.mp3';
+
+const kaching = new Audio();
+kaching.src = 'kaching.mp3';
+
+const kidsCheering = new Audio();
+kidsCheering.src = 'kids_cheering.mp3';
+
+const slotMachine = new Audio();
+slotMachine.src = 'slotmachine_insert.mp3';
+
+const errorTone = new Audio();
+errorTone.src = 'error_tone.mp3'
+
+// Audio volume levels for background music
+var backgroundMusic = document.getElementById("jazzmusic")
+backgroundMusic.volume = 0.8;
+diceRollSound.volume=0.8;
+clickSound.volume=0.8;
+clickSound2.volume=0.8;
+crowdAww.volume=0.8;
+kaching.volume=0.8;
+kidsCheering.volume=0.8;
+
+//Animated Header
+spans.forEach((span, idx)=>{
+  span.addEventListener('click',(e)=> {
+    e.target.classList.add('active');
+  });
+  span.addEventListener('animationend', (e)=>{
+    e.target.classList.remove('active');
+  });
+  setTimeout(() => {
+    span.classList.add('active');
+  }, 750 * (idx+1))
+});
+
+
+
+
+
+// Animated number counter
+// function animateValue(id) {
+//   var obj = id;
+//   var current = obj.innerHTML;
+//   setInterval(function(){
+//     current++;
+//     obj.innerHTML = current;
+//   }, 1000);
+// }
+

@@ -1,157 +1,386 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box; /*It guarantees that the content box shrinks to make space for the padding and borders.*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*It guarantees that the content box shrinks to make space for the padding and borders.*/
 }
 
-body{
-    height: 100%;
-    background: linear-gradient (
-        #e92e3d,
-        #ff6e6a
-    ) 0 100% no-repeat;
-    background-size: 100% 50%;
-    font-family: 'Roboto', sans-serif;
+body {
+  background-size: 100% 50%;
+  font-family: "Roboto", sans-serif;
 }
 
-.container{
-    width: 800px;
-    height: 850px;
-    padding: 20px;
-    border: 1px solid black;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    background-color: white;
-    box-shadow: 0 15px 35px rgba(50,50,50,0.15);
-    border-radius: 8px;
-    outline: none;
-    font-size: 2rem;
+.container {
+  width: 800px;
+  height: 830px;
+  padding: 20px;
+  border: 1px solid black;
+  position: absolute;
+  margin-top: 20px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.15);
+  border-radius: 8px;
+  outline: none;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.75);
 }
 .header {
-    color: black;
-    margin: auto;
-    text-align: center;
+  color: black;
+  margin: auto;
+  text-align: center;
+  font-size: 50px;
+  font-family: "rubik", sans-serif;
 }
 
 .welcome {
-    color:black;
-    margin-left: 100px;
-    text-align:center;
-
+  color: black;
+  margin-left: 100px;
+  text-align: center;
 }
 
 #userInput {
-    color: black;
-    text-align: center;
-    margin-top: 50px;
-    margin-left: 230px;
-    width: 300px;
-    height: 50px;
+  color: black;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 230px;
+  width: 300px;
+  height: 50px;
 }
 
 .cashremainingtext {
-    font-size: 35px;
-    text-align:center;
-}
-.youhaveplacedtext{
-    text-align: center;
-    font-size: 35px;
+  font-size: 30px;
+  text-align: center;
 }
 
-.overbtn{ 
-    width: 175px;
-    height: 100px;
-    margin-top: 20px;
-    margin-left: 85px;
-    background-color: rgb(255, 0, 68);
-    border-radius: 4px;
-    transition: ease-out 0.3s;
-    color: white;
-    font-size: 2rem;
-    box-shadow: inset 0 0 0 0 #f9e506;
+.youhaveplacedtext {
+  font-size: 30px;
+  text-align: center;
 }
+
+.overbtn {
+  width: 175px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 85px;
+  background-color: rgb(255, 0, 68);
+  border-radius: 4px;
+  transition: ease-out 0.3s;
+  color: white;
+  font-size: 2rem;
+  box-shadow: inset 0 0 0 0 #f9e506;
+}
+
 .underbtn {
-    width: 175px;
-    height: 100px;
-    margin-top: 20px;
-    margin-left: 30px;
-    background-color: rgb(42, 155, 221);
-    border-radius: 4px;
-    color: white;
-    font-size: 2rem;
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 #f9e506;
+  width: 175px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 30px;
+  background-color: rgb(42, 155, 221);
+  border-radius: 4px;
+  color: white;
+  font-size: 2rem;
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 #f9e506;
 }
 
 .sevenbtn {
-    width: 175px;
-    height: 100px;
-    margin-top: 20px;
-    margin-left: 30px;
-    background-color: rgb(2, 2, 2);
-    border-radius: 4px;
-    color: rgb(255, 255, 255);
-    font-size: 2rem;
-    transition: ease-out 0.3s;
-    box-shadow: inset 0 0 0 0 #f9e506;
-
+  width: 175px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 30px;
+  background-color: rgb(2, 2, 2);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 #f9e506;
 }
 
 /* When mouse hovers over button */
-.overbtn:hover, .underbtn:hover, .sevenbtn:hover {
-    box-shadow: inset 175px 0 0 0 #f9e506;
-    cursor: pointer;
-    color: black;
+.overbtn:hover,
+.underbtn:hover,
+.sevenbtn:hover {
+  box-shadow: inset 175px 0 0 1px #f9e506;
+  cursor: pointer;
+  color: black;
+  transform: translateY(-10px);
 }
 
 /* When button is clicked */
-.overbtn:focus, .underbtn:focus, .sevenbtn:focus {
-    color: black;
-    border-color:rgb(255, 0, 68);
-    background-color: #f9e506;
-    border-width: thick;
+.overbtn:focus,
+.underbtn:focus,
+.sevenbtn:focus {
+  color: black;
+  border-color: rgb(255, 0, 68);
+  background-color: #f9e506;
+  border-width: thick;
 }
 
-
 .dice-wrapper {
-    padding: 20px;
-    margin-top: 10px;
-    display: block;
-    text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
 }
 
 #rollbtn {
-    width: 150px;
-    height: 50px;
-    text-align: center;
-    display: block;
-    margin: auto;
-    margin-top: -10px;
+  width: 150px;
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  background: #ce9f11;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
 
+#rollbtn:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+  background: #ffc000;
+  box-shadow: 0 0 5px #ffc000, 0 0 20px #ffc000, 0 0 60px #ffc000,
+    0 0 150px #ffc000;
 }
 
 #die-1 {
-    margin-left: 175px;
-    margin-right: 50px;
+  margin-left: 175px;
+  margin-right: 50px;
 }
 
 #betamount {
-    text-align: center;
+  text-align: center;
+  display: block;
+  width: 70px;
+  height: 40px;
+  margin: auto;
+  transition: 0.3s ease;
+  text-decoration: none;
+  border-radius: 30px;
+  border: transparent;
+}
+
+#betamount:hover {
+  background: rgba(233, 236, 215, 0.5);
+  box-shadow: 0 0 5px #08f12f, 0 0 20px #08f12f, 0 0 60px #08f12f,
+    0 0 100px #08f12f;
+  font-size: 40px;
 }
 
 #walletamount {
-    text-align: center;
+  display: block;
+  width: 80px;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+  border-radius: 30px;
+  border: transparent;
+}
+
+#walletamount:hover {
+  background: rgba(233, 236, 215, 0.5);
+  box-shadow: 0 0 5px #08f12f, 0 0 20px #08f12f, 0 0 60px #08f12f,
+    0 0 100px #08f12f;
+  font-size: 40px;
 }
 
 #resetbtn {
-    width: 100px;
-    height: 20px;
-    margin-left: 650px;
+  width: 80px;
+  height: 20px;
+  margin-left: 650px;
+  display: flex;
+  margin-top: -20px;
 }
 
 #winstreak {
-    text-align: center;
-    font-size: 25px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.winstreakcomment {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: -25px;
+}
+
+#musiccredit {
+  font-size: 12px;
+  color: grey;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#home {
+  clip-path: url(#cache);
+}
+
+#red {
+  fill: none;
+  opacity: 0.15;
+  stroke: #ce1b5f;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #06a1c4;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+  animation: show 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+  fill: none;
+  opacity: 0.15;
+  stroke: #06a1c4;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 800;
+  animation: draw 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+p {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.roll {
+  animation: roll 0.5s infinite;
+  animation-duration: 0.7s;
+}
+.rollinfinite {
+    animation: roll 0.5s infinite;
+}
+@keyframes roll {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+/*Header animations*/
+@import url("https://fonts.googleapis.com/css?family=Anton|Roboto");
+
+.header {
+  font-family: "Anton", sans-serif;
+  perspective: 1000px;
+}
+
+.header span {
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  line-height: 0.8;
+}
+
+.header span:nth-child(2).active {
+  animation: balance 1.5s ease-out;
+  transform-origin: bottom left;
+}
+
+@keyframes balance {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  30%,
+  60% {
+    transform: rotate(-45deg);
+  }
+}
+
+.header span:nth-child(1).active {
+  animation: shrinkjump 1s ease-in-out;
+  transform-origin: bottom center;
+}
+
+@keyframes shrinkjump {
+  10%,
+  35% {
+    transform: scale(2, 0.2) translate(0, 0);
+  }
+
+  45%,
+  50% {
+    transform: scale(1) translate(0, -150px);
+  }
+
+  80% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.header span:nth-child(3).active {
+  animation: falling 2s ease-out;
+  transform-origin: bottom center;
+}
+
+@keyframes falling {
+  12% {
+    transform: rotateX(240deg);
+  }
+  24% {
+    transform: rotateX(150deg);
+  }
+  36% {
+    transform: rotateX(200deg);
+  }
+  48% {
+    transform: rotateX(175deg);
+  }
+  60%, 85% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
 }
