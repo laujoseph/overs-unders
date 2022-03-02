@@ -11,13 +11,11 @@ const highScore = document.getElementById("highscore");
 const total = document.getElementById("total");
 const spans = document.querySelectorAll('.header span');
 let dice = document.querySelectorAll("img");
-
 const mouseDownRollBtn = document.querySelector("#rollbtn")
-mouseDownRollBtn.addEventListener("onmousedown", infiniteRoll);
 
 function infiniteRoll() {
+  shakeDice.volume=1;
   shakeDice.play();
-  shakeDice.loop
   dice.forEach(function(die){
     die.classList.add("rollinfinite");
   })
@@ -28,6 +26,9 @@ function infiniteRoll() {
 // Functions
 // Rolling of the dice
 rollDie=()=>{
+  // Ensure the dice shaking audio stops the moment user lets go of button
+  shakeDice.volume = 0;
+  
   dice.forEach(function(die){
     die.classList.remove("rollinfinite");
   });
@@ -192,7 +193,7 @@ setTimeout(function(){
         alert("You've run out of cash, better luck next time!")
         location.reload();
       }, 1000);
-    }
+    } 
   }
 
 // msgs that comments based on the winstreak in a row msg
