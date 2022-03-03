@@ -10,8 +10,9 @@ const userInput = document.getElementById("userInput");
 const highScore = document.getElementById("highscore");
 const total = document.getElementById("total");
 const spans = document.querySelectorAll('.header span');
+const mouseDownRollBtn = document.querySelector("#rollbtn");
 let dice = document.querySelectorAll("img");
-const mouseDownRollBtn = document.querySelector("#rollbtn")
+
 
 function infiniteRoll() {
   shakeDice.volume=1;
@@ -107,6 +108,9 @@ setTimeout(function(){
         currentWalletAmt.value += userInput.value * 2;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        if (highScore.value < currentWalletAmt.value) {
+        highScore.innerText = "$" + currentWalletAmt.value
+        };
         commentText();
         kaching.play();
         console.log(currentWalletAmt.value)
@@ -137,6 +141,9 @@ setTimeout(function(){
         currentWalletAmt.value += userInput.value * 2;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        if (highScore.value < currentWalletAmt.value) {
+          highScore.innerText = "$" + currentWalletAmt.value
+          };
         commentText();
         kaching.play();
         console.log(currentWalletAmt.value)
@@ -166,6 +173,9 @@ setTimeout(function(){
         currentWalletAmt.value += userInput.value * 3;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        if (highScore.value < currentWalletAmt.value) {
+          highScore.innerText = "$" + currentWalletAmt.value
+          };
         commentText();
         kidsCheering.play();
         console.log(currentWalletAmt.value)
@@ -196,6 +206,7 @@ setTimeout(function(){
     } 
   }
 
+
 // msgs that comments based on the winstreak in a row msg
 commentText=()=>{
 let comment = document.querySelector(".winstreakcomment")
@@ -214,6 +225,7 @@ if (winStreakCounter.innerText == 4) {
 
 
 currentWalletAmt.value = 100;
+
 
 
 logInput=()=>{
@@ -354,16 +366,6 @@ spans.forEach((span, idx)=>{
 });
 
 
-
-
-
-// Animated number counter
-// function animateValue(id) {
-//   var obj = id;
-//   var current = obj.innerHTML;
-//   setInterval(function(){
-//     current++;
-//     obj.innerHTML = current;
-//   }, 1000);
-// }
+document.getElementById('highscore').value = document.getElementById('walletamount').value
+// document.getElementById('highscore').innerText = document.getElementById('walletamount').value
 

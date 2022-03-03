@@ -31,7 +31,8 @@ body {
   margin: auto;
   text-align: center;
   font-size: 50px;
-  font-family: "rubik", sans-serif;
+  font-family: headerFont;
+  color: rgb(233, 201, 18);
 }
 
 .welcome {
@@ -50,8 +51,11 @@ body {
 }
 
 .cashremainingtext {
-  font-size: 30px;
+  margin-left: 100px;
+  font-size: 20px;
   text-align: center;
+  display:inline-block;
+  font-family:sans-serif;
 }
 
 .youhaveplacedtext {
@@ -166,17 +170,17 @@ body {
   text-decoration: none;
   border-radius: 30px;
   border: transparent;
+  font-family: digitalFont;
 }
 
-#betamount:hover {
+#betamount:hover, #highscore:hover {
   background: rgba(233, 236, 215, 0.5);
   box-shadow: 0 0 5px #08f12f, 0 0 20px #08f12f, 0 0 60px #08f12f,
     0 0 100px #08f12f;
   font-size: 40px;
 }
 
-#walletamount {
-  display: block;
+#walletamount, #highscore {
   width: 80px;
   height: 40px;
   margin: auto;
@@ -185,6 +189,8 @@ body {
   text-decoration: none;
   border-radius: 30px;
   border: transparent;
+  font-family: digitalFont;
+  display:inline-block;
 }
 
 #walletamount:hover {
@@ -383,4 +389,19 @@ p {
   100% {
     transform: rotateX(0deg);
   }
+}
+
+@font-face {
+  font-family: headerFont;
+  src: url(casino.3d-marquee-regular.ttf);
+}
+
+.header {
+  font-family: headerFont;
+  color: rgb(233, 201, 18);
+}
+
+@font-face {
+  font-family: digitalFont;
+  src: url(digital-7.ttf);
 }
