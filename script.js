@@ -37,7 +37,7 @@ setTimeout(function(){
   var d2 = Math.floor(Math.random() * 6) + 1;
   console.log(`Die 1 rolled a ${d1}.`);
   console.log(`Die 2 rolled a ${d2}.`);
-  diceTotal = 7;
+  diceTotal = d1 + d2;
 
   // diceTotalDisplay.innerText = diceTotal;
   // diceTotalDisplay.value = diceTotal;
@@ -336,7 +336,7 @@ shakeDice.src = 'diceshake.mp3'
 
 // Audio volume levels for background music
 var backgroundMusic = document.getElementById("jazzmusic")
-backgroundMusic.volume = 0.8;
+backgroundMusic.volume = 0.6;
 diceRollSound.volume=0.8;
 clickSound.volume=0.8;
 clickSound2.volume=0.8;
