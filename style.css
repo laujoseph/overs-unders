@@ -11,7 +11,7 @@ body {
 
 .container {
   width: 800px;
-  height: 830px;
+  height: 850px;
   padding: 20px;
   border: 1px solid black;
   position: absolute;
@@ -57,7 +57,9 @@ body {
     0 0 150px #ffc000;
 }
 
-
+#comment{
+  font-size: 15px;
+}
 
 .header {
   color: black;

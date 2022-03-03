@@ -210,7 +210,7 @@ setTimeout(function(){
 // msgs that comments based on the winstreak in a row msg
 commentText=()=>{
 let comment = document.querySelector(".winstreakcomment")
-
+comment.id='comment';
 if (winStreakCounter.innerText == 2) {
   document.getElementById("winstreak").appendChild(comment);
   comment.innerHTML = "2 in a row! That's pretty lucky";
