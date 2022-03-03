@@ -135,7 +135,7 @@
     
 <div class = 'container'>
     <button onclick="soundToggle();" id='mutebtn'>🔊</button>
-    <button onclick="rules();" id='rulebtn'>Rules</button>
+    <button onclick="rules();" id='rulebtn'>📜</button>
     <div class = 'header'>
 		<span class=>Overs</span>
 		<span>&</span>
@@ -146,9 +146,9 @@
     <h2 class = 'cashremainingtext'>Cash remaining: </h2>
     <div type="number" id='walletamount'>$100</div>
     <br><br>
-    <h2 class = 'youhaveplacedtext'>You have placed: </h2>
+    <h2 class = 'youhaveplacedtext'>Your bet amount: </h2>
     <div type="number" id='betamount'>$0</div>
-    
+
 
     <!-- Winstreak counter -->
     <p id="winstreak">Current winstreak: 
@@ -158,7 +158,7 @@
 
     <!-- Input box  -->
     <input type="number" min="1" max="" id='userInput' placeholder="Please enter play amount" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-    <button onclick="clickSound2.play();logInput();">Confirm</button>
+    <button id="confirmbtn" onclick="clickSound2.play();logInput();">Confirm</button>
     <button onclick="userCallOver();clickSound.play();" class='overbtn'>Over</button>
     <button onclick="userCallSeven();clickSound.play();"class='sevenbtn'>Seven</button>
     <button onclick="userCallUnder();clickSound.play();"class='underbtn'>Under</button>
@@ -171,7 +171,7 @@
     </div>
 		<p id="total">Good luck!</p>
 		<button onmousedown ="infiniteRoll();" onmouseup="rollDie();diceRollSound.play();" id='rollbtn'>Roll 🎲</button>
-		<button onmouseup="clickSound2.play();resetGame();" id='resetbtn'>Reset Game</button>
+		<button onmouseup="clickSound2.play();resetGame();" id='resetbtn'>Start Over</button>
         
 		
         <!-- <div class = 'resultbox'>

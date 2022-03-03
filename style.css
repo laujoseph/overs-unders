@@ -26,11 +26,44 @@ body {
   font-size: 2rem;
   background: rgba(255, 255, 255, 0.75);
 }
+
+#rulebtn, #mutebtn{
+  height: 25px;
+  background-color: rgba(255,255,255, 0.5);
+  border-color:rgb(2, 2, 2);
+  border-radius: 5px;
+  border-width: thin;
+  width: 20px;
+}
+
+#resetbtn {
+  width: 65px;
+  height: 18px;
+  margin-left: 700px;
+  display: flex;
+  margin-top: -20px;
+  text-align: center;
+  background-color: rgba(255,255,255, 0.5);
+  border-color:rgb(2, 2, 2);
+  border-radius: 5px;
+  border-width: thin;
+}
+
+#rulebtn:hover, #mutebtn:hover, #resetbtn:hover{
+  transform: translateY(-2px);
+  cursor: pointer;
+  background: #f0ede8;
+  box-shadow: 0 0 5px #ffc000, 0 0 20px #ffc000, 0 0 60px #ffc000,
+    0 0 150px #ffc000;
+}
+
+
+
 .header {
   color: black;
   margin: auto;
   text-align: center;
-  font-size: 50px;
+  font-size: 60px;
   font-family: headerFont;
   color: rgb(233, 201, 18);
 }
@@ -51,16 +84,17 @@ body {
 }
 
 .cashremainingtext {
-  margin-left: 100px;
-  font-size: 20px;
+  margin-top: 50px;
+  margin-left: 85px;
+  font-size: 25px;
   text-align: center;
   display:inline-block;
-  font-family:sans-serif;
+  font-family:flatcasino;
 }
-
 .youhaveplacedtext {
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
+  font-family:normalcasino;
 }
 
 .overbtn {
@@ -141,10 +175,32 @@ body {
   letter-spacing: 3px;
   text-decoration: none;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
-  background: #ce9f11;
+  background: #ffe603;
   border-radius: 20px;
   transition: 0.3s ease;
   font-weight: bold;
+}
+
+#confirmbtn {
+  width: 100px;
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+#confirmbtn:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0 0 5px #ffc000, 0 0 20px #ffc000, 0 0 60px #ffc000,
+    0 0 150px #ffc000;
 }
 
 #rollbtn:hover {
@@ -171,6 +227,7 @@ body {
   border-radius: 30px;
   border: transparent;
   font-family: digitalFont;
+  margin-bottom: 10px;
 }
 
 #betamount:hover, #highscore:hover {
@@ -200,17 +257,12 @@ body {
   font-size: 40px;
 }
 
-#resetbtn {
-  width: 80px;
-  height: 20px;
-  margin-left: 650px;
-  display: flex;
-  margin-top: -20px;
-}
+
 
 #winstreak {
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
+  font-family:flatcasino;
 }
 
 .winstreakcomment {
@@ -391,6 +443,7 @@ p {
   }
 }
 
+/* fonts */
 @font-face {
   font-family: headerFont;
   src: url(casino.3d-marquee-regular.ttf);
@@ -404,4 +457,14 @@ p {
 @font-face {
   font-family: digitalFont;
   src: url(digital-7.ttf);
+}
+
+@font-face {
+  font-family: normalcasino;
+  src: url(casino.3d-regular.ttf);
+}
+
+@font-face {
+  font-family: flatcasino;
+  src: url(casino.flat-regular.ttf);
 }
