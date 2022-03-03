@@ -14,28 +14,19 @@ const mouseDownRollBtn = document.querySelector("#rollbtn");
 let dice = document.querySelectorAll("img");
 
 
-function infiniteRoll() {
-  shakeDice.volume=1;
-  shakeDice.play();
-  dice.forEach(function(die){
-    die.classList.add("rollinfinite");
-  })
-}
-
-
-
 // Functions
 // Rolling of the dice
 rollDie=()=>{
   // Ensure the dice shaking audio stops the moment user lets go of button
   shakeDice.volume = 0;
-  
+
   dice.forEach(function(die){
     die.classList.remove("rollinfinite");
   });
   dice.forEach(function(die){
     die.classList.add("roll");
 });
+    // changes the class of the dice elements to let it roll/stop rolling
 setTimeout(function(){
     dice.forEach(function(die){
         die.classList.remove("roll");
@@ -46,7 +37,7 @@ setTimeout(function(){
   var d2 = Math.floor(Math.random() * 6) + 1;
   console.log(`Die 1 rolled a ${d1}.`);
   console.log(`Die 2 rolled a ${d2}.`);
-  diceTotal = d1 + d2;
+  diceTotal = 7;
 
   // diceTotalDisplay.innerText = diceTotal;
   // diceTotalDisplay.value = diceTotal;
@@ -116,7 +107,6 @@ setTimeout(function(){
         console.log(currentWalletAmt.value)
         // SetTimeout allows the user to view the dice roll result before the alert prompts
         setTimeout(()=>{
-          if (userInput.value != 0) 
           alert(`Over! You've won $${userInput.value * 2}!`)
           currentBetValue.innerText= "$" + 0;
           userInput.value = '';
@@ -128,7 +118,6 @@ setTimeout(function(){
         winStreakCounter.innerText = winStreak = 0;
         crowdAww.play();
         setTimeout(()=>{
-          if (userInput.value != 0) 
           alert(`Doh! You've lost $${userInput.value}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
@@ -148,19 +137,16 @@ setTimeout(function(){
         kaching.play();
         console.log(currentWalletAmt.value)
         setTimeout(()=>{
-          if (userInput.value != 0) 
           alert(`Under! You've won $${userInput.value * 2}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
         }, 800)
       } else {
-        if (userInput.value != 0) 
         currentWalletAmt.value -= userInput.value;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak = 0;
         crowdAww.play();
         setTimeout(()=>{
-          if (userInput.value != 0) 
           alert(`Doh! You've lost $${userInput.value}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
@@ -173,6 +159,7 @@ setTimeout(function(){
         currentWalletAmt.value += userInput.value * 3;
         currentWalletAmt.innerText = "$" + currentWalletAmt.value
         winStreakCounter.innerText = winStreak += 1;
+        console.log(winStreak.value)
         if (highScore.value < currentWalletAmt.value) {
           highScore.innerText = "$" + currentWalletAmt.value
           };
@@ -180,7 +167,6 @@ setTimeout(function(){
         kidsCheering.play();
         console.log(currentWalletAmt.value)
         setTimeout(()=>{
-          if (userInput.value != 0) 
           alert(`Seven! Amazing! You've won $${userInput.value * 3}!`)
           currentBetValue.innerText = "$" + 0;
           userInput.value = '';
@@ -204,28 +190,34 @@ setTimeout(function(){
         location.reload();
       }, 1000);
     } 
-  }
+      userInputChosenString ='';
+};
 
+// function to add a class to the dice images for dice rolling animation
+function infiniteRoll() {
+  shakeDice.volume=1;
+  shakeDice.play();
+  dice.forEach(function(die){
+    die.classList.add("rollinfinite");
+  })
+}
 
 // msgs that comments based on the winstreak in a row msg
 commentText=()=>{
 let comment = document.querySelector(".winstreakcomment")
-comment.id='comment';
 if (winStreakCounter.innerText == 2) {
-  document.getElementById("winstreak").appendChild(comment);
-  comment.innerHTML = "2 in a row! That's pretty lucky";
-  }
-if (winStreakCounter.innerText == 3) {
-  document.querySelector(".winstreakcomment").innerHTML ="3 in a row! You've got to be cheating...right?";
-  }
-if (winStreakCounter.innerText == 4) {
-  document.querySelector(".winstreakcomment").innerHTML ="4 in a row! You're cheating... this isn't fun anymore";
+  // document.getElementById("winstreak").appendChild(comment);
+    comment.innerHTML = "2 in a row! That's pretty lucky";
+  } else if (winStreakCounter.innerText == 3) {
+    comment.innerHTML ="3 in a row! RNG-sus smiles upon you";
+  } else if (winStreakCounter.innerText == 4) {
+    comment.innerHTML ="4 in a row! You've gotta be cheating... right?";
+  } else if (winStreakCounter.innerText == 5) {
+    comment.innerHTML ="CHEATER CHEATER PUMPKIN EATER";
   }
 };
 
-
 currentWalletAmt.value = 100;
-
 
 
 logInput=()=>{

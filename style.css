@@ -57,9 +57,7 @@ body {
     0 0 150px #ffc000;
 }
 
-#comment{
-  font-size: 15px;
-}
+
 
 .header {
   color: black;
@@ -264,12 +262,12 @@ body {
 #winstreak {
   text-align: center;
   font-size: 20px;
-  font-family:flatcasino;
+  font-family: cursive;
 }
 
 .winstreakcomment {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   margin-bottom: -25px;
 }
