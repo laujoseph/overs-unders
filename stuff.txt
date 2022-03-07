@@ -50,4 +50,3 @@ Things to check:
 make animation for rolling dice
 when holding down dice roll button, dice keeps rolling
 
-Features:

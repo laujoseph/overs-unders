@@ -383,7 +383,7 @@ p {
   animation: balance 1.5s ease-out;
   transform-origin: bottom left;
 }
-
+/* @keyframes specifies the animation code. */
 @keyframes balance {
   0%,
   100% {

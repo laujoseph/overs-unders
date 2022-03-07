@@ -19,7 +19,7 @@ let dice = document.querySelectorAll("img");
 rollDie=()=>{
   // Ensure the dice shaking audio stops the moment user lets go of button
   shakeDice.volume = 0;
-
+  // If dice is rolling, stop
   dice.forEach(function(die){
     die.classList.remove("rollinfinite");
   });
@@ -38,9 +38,6 @@ setTimeout(function(){
   console.log(`Die 1 rolled a ${d1}.`);
   console.log(`Die 2 rolled a ${d2}.`);
   diceTotal = d1 + d2;
-
-  // diceTotalDisplay.innerText = diceTotal;
-  // diceTotalDisplay.value = diceTotal;
 
   total.innerHTML = `You rolled ${diceTotal}`;
   console.log(`Summed value is ${diceTotal}.`);
